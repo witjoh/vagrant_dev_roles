@@ -4,6 +4,6 @@ class roles::docker::docker {
   include profiles::docker::registry
   include profiles::dev_env
   include profiles::packages
-  include profiles::vagrant
+  profiles::packer { 'vagrant': }
 
 }
