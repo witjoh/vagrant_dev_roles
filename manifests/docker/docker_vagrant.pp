@@ -5,6 +5,8 @@ class roles::docker::docker_vagrant {
   include profiles::packages
   include profiles::vagrant
   profiles::packer { 'vagrant': }
-  include profiles::workstation
+  include profiles::ruby
+
+  Class['profiles::packages'] -> Class['profiles::ruby']
 
 }
