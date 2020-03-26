@@ -2,10 +2,8 @@ class roles::workstation {
 
   include profiles::dev_env
   include profiles::packages
-  include profiles::ruby
-  #include profiles::vagrant 
+  include profiles::vagrant_rvm
 
-
-  Class['profiles::packages'] -> Class['profiles::ruby']
+  Class['profiles::packages'] -> Class['profiles::vagrant_rvm']
 
 }
